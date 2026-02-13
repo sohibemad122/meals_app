@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:meals_app/Features/widgets/custom_carousel_slider.dart';
 import 'package:meals_app/core/Helpers/spacing.dart';
 import 'package:meals_app/core/Theme/app_colors.dart';
 
@@ -11,9 +12,6 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
- 
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,10 +41,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     vertical: 30.h,
                   ),
                   child: Column(
-                    children: [
-                     
-                      verticalspace(70),
-                    ],
+                    children: [Expanded(child: const CustomCarouselSlider()), verticalspace(70)],
                   ),
                 ),
               ),

@@ -71,7 +71,6 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
             }),
           ),
         ),
-
         verticalspace(15),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
