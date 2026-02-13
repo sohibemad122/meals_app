@@ -14,4 +14,9 @@ class TextStyles {
     color: AppColors.white,
     fontWeight: FontWeightHelper.regular,
   );
+  static TextStyle font14WhiteSemibold = TextStyle(
+    fontSize: 14.sp,
+    color: AppColors.white,
+    fontWeight: FontWeightHelper.semibold,
+  );
 }

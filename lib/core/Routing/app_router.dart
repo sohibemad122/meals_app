@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/Features/home/home_page.dart';
 import 'package:meals_app/Features/onboarding/onboarding_page.dart';
-import 'package:meals_app/core/Routing/routing.dart';
+import 'package:meals_app/core/Routing/routes.dart';
 
 class AppRouters {
   static Route? generateRoute(RouteSettings setting) {
     switch (setting.name) {
-      case Routing.onboardingPage:
+      case Routes.onboardingPage:
         return MaterialPageRoute(builder: (_) => const OnboardingPage());
+
+      case Routes.homePage:
+        return MaterialPageRoute(builder: (_) => const HomePage());
     }
     return null;
   }
