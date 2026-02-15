@@ -19,4 +19,10 @@ class TextStyles {
     color: AppColors.white,
     fontWeight: FontWeightHelper.semibold,
   );
+
+  static TextStyle font16Neutral100SemiBold = TextStyle(
+    fontSize: 16.sp,
+    color: AppColors.Neutral100,
+    fontWeight: FontWeightHelper.semibold,
+  );
 }
