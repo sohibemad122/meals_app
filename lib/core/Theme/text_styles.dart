@@ -25,4 +25,19 @@ class TextStyles {
     color: AppColors.Neutral100,
     fontWeight: FontWeightHelper.semibold,
   );
+  static TextStyle font16Neutral100Medium = TextStyle(
+    fontSize: 16.sp,
+    color: AppColors.Neutral100,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font12Neutral100Medium = TextStyle(
+    fontSize: 12.sp,
+    color: AppColors.Neutral100,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font14Neutral100Regular = TextStyle(
+    fontSize: 14.sp,
+    color: AppColors.Neutral100,
+    fontWeight: FontWeightHelper.regular,
+  );
 }
