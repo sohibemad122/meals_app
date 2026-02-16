@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meals_app/core/Helpers/spacing.dart';
@@ -5,7 +6,18 @@ import 'package:meals_app/core/Theme/app_colors.dart';
 import 'package:meals_app/core/Theme/text_styles.dart';
 
 class FoodItemWidget extends StatelessWidget {
-  const FoodItemWidget({super.key});
+  final String imageUrl;
+  final String name;
+  final String rate;
+  final String time;
+
+  const FoodItemWidget({
+    super.key,
+    required this.imageUrl,
+    required this.name,
+    required this.rate,
+    required this.time,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +43,25 @@ class FoodItemWidget extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(14.r),
-                child: Image.asset(
-                  'assets/images/Image.png',
+                child: CachedNetworkImage(
                   width: double.infinity,
                   height: 110.h,
                   fit: BoxFit.cover,
+                  imageUrl: imageUrl,
+
+                 
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+
+                  
+                  errorWidget: (context, url, error) => Container(
+                    color: Colors.grey.shade200,
+                    child: const Icon(
+                      Icons.image_not_supported,
+                      color: Colors.grey,
+                    ),
+                  ),
                 ),
               ),
 
@@ -60,7 +86,7 @@ class FoodItemWidget extends StatelessWidget {
 
           verticalspace(8),
           Text(
-            'Cheese Burger',
+            name,
             style: TextStyles.font16Neutral100SemiBold,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -72,7 +98,7 @@ class FoodItemWidget extends StatelessWidget {
             children: [
               Icon(Icons.star, size: 14.sp, color: Colors.amber),
               SizedBox(width: 3.w),
-              Text('4.9', style: TextStyles.font12Neutral100Medium),
+              Text(rate, style: TextStyles.font12Neutral100Medium),
 
               const Spacer(),
               Image.asset(
@@ -81,7 +107,7 @@ class FoodItemWidget extends StatelessWidget {
                 width: 14.w,
               ),
               horizontalspace(5),
-              Text('20 - 30', style: TextStyles.font14Neutral100Regular),
+              Text(time, style: TextStyles.font14Neutral100Regular),
             ],
           ),
         ],
