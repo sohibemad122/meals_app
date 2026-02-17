@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:meals_app/Features/home/data/db_helper.dart';
 import 'package:meals_app/Features/home/widgets/food_item_widget.dart';
 import 'package:meals_app/Features/home/widgets/topbar_and_text.dart';
+import 'package:meals_app/core/Helpers/extension.dart';
 import 'package:meals_app/core/Helpers/spacing.dart';
+import 'package:meals_app/core/Routing/routes.dart';
 import 'package:meals_app/core/Theme/app_colors.dart';
 import 'package:meals_app/core/Theme/text_styles.dart';
 
@@ -88,7 +90,7 @@ class _HomePageState extends State<HomePage> {
           borderRadius: BorderRadius.circular(40),
           side: BorderSide(color: AppColors.mainColor, width: 1.5),
         ),
-        onPressed: () {},
+        onPressed: () => context.pushNamed(Routes.mealPage),
         child: Icon(Icons.add, color: AppColors.mainColor, size: 35),
       ),
     );
