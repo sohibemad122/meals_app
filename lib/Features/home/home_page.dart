@@ -73,6 +73,12 @@ class _HomePageState extends State<HomePage> {
                         name: meal.name,
                         rate: meal.rate,
                         time: meal.time,
+                        onTap: () {
+                          context.pushNamed(
+                            Routes.mealDetailsPage,
+                            arguments: meal,
+                          );
+                        },
                       );
                     },
                   );

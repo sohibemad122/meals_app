@@ -118,6 +118,7 @@ class _AddMealScreenState extends State<AddMealScreen> {
                                 rate: rateController.text,
                               );
                               dbHelper.insertMeal(meal).then((value) {
+                                // ignore: use_build_context_synchronously
                                 context.pushReplacementNamed(Routes.homePage);
                               });
                             }

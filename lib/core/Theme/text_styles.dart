@@ -39,5 +39,9 @@ class TextStyles {
     fontSize: 14.sp,
     color: AppColors.Neutral100,
     fontWeight: FontWeightHelper.regular,
+  );static TextStyle font24Neutral100Regular = TextStyle(
+    fontSize: 24.sp,
+    color: AppColors.Neutral100,
+    fontWeight: FontWeightHelper.regular,
   );
 }
