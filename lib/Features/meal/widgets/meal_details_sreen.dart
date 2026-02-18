@@ -34,12 +34,10 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             verticalspace(12),
 
-            // Time and Rate Row
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Row(
                 children: [
-                  // Time Icon
                   Image.asset(
                     'assets/images/Subtract.png',
                     height: 16.h,
@@ -49,7 +47,6 @@ class MealDetailsScreen extends StatelessWidget {
                   Text(meal.time, style: TextStyles.font14Neutral100Regular),
                   const Spacer(),
 
-                  // Rating
                   Icon(Icons.star, size: 16.sp, color: Colors.amber),
                   SizedBox(width: 4.w),
                   Text(meal.rate, style: TextStyles.font14Neutral100Regular),
@@ -58,7 +55,7 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             verticalspace(25),
 
-            // Divider
+            
             Divider(
               thickness: 1,
               color: AppColors.Neutral30,
@@ -67,13 +64,12 @@ class MealDetailsScreen extends StatelessWidget {
             ),
             verticalspace(25),
 
-            // Description
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 meal.description,
                 style: TextStyles.font16Neutral100Medium.copyWith(
-                  height: 1.5, // makes text more readable
+                  height: 1.5, 
                 ),
               ),
             ),

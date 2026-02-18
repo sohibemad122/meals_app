@@ -5,7 +5,9 @@ import 'package:meals_app/core/Routing/app_router.dart';
 import 'package:meals_app/core/Routing/routes.dart';
 
 class MealsApp extends StatelessWidget {
-  const MealsApp({super.key});
+  final bool isLoggedIn;
+
+  const MealsApp({super.key, required this.isLoggedIn});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,8 @@ class MealsApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Meals App',
 
-          initialRoute: Routes.onboardingPage,
+          initialRoute: isLoggedIn ? Routes.homePage : Routes.onboardingPage,
+
           onGenerateRoute: AppRouters.generateRoute,
           builder: (context, child) {
             SystemChrome.setSystemUIOverlayStyle(

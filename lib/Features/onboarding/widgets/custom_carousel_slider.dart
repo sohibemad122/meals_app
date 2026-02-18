@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meals_app/Features/onboarding/widgets/carousel_item_widget.dart';
 import 'package:meals_app/Features/onboarding/widgets/custom_botton.dart';
 import 'package:meals_app/core/Helpers/extension.dart';
+import 'package:meals_app/core/Helpers/shared_pref_helper.dart';
 import 'package:meals_app/core/Helpers/spacing.dart';
 import 'package:meals_app/core/Routing/routes.dart';
 import 'package:meals_app/core/Theme/app_colors.dart';
@@ -101,12 +102,16 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 
   Widget _buildDoneButton() {
     return GestureDetector(
-      onTap: () => context.pushNamedAndRemoveUntil(
-        Routes.homePage,
-        predicate: (Route<dynamic> route) {
-          return false;
-        },
-      ),
+      onTap: () async {
+        await SharedPrefHelper.saveLogin(true); 
+
+        context.pushNamedAndRemoveUntil(
+          Routes.homePage,
+          predicate: (Route<dynamic> route) {
+            return false;
+          },
+        );
+      },
       child: Container(
         height: 62.h,
         width: 62.w,

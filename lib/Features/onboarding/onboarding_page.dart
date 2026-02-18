@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:meals_app/Features/onboarding/widgets/custom_carousel_slider.dart';
-import 'package:meals_app/core/Helpers/extension.dart';
-import 'package:meals_app/core/Helpers/shared_pref_helper.dart';
-import 'package:meals_app/core/Routing/routes.dart';
+
 import 'package:meals_app/core/Theme/app_colors.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -14,20 +12,7 @@ class OnboardingPage extends StatefulWidget {
 }
 
 class _OnboardingPageState extends State<OnboardingPage> {
-  @override
-  void initState() {
-    super.initState();
 
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      bool loggedIn = await SharedPrefHelper.isLoggedIn();
-
-      if (loggedIn) {
-        context.pushNamed(Routes.homePage);
-      } else {
-        context.pushNamed(Routes.onboardingPage);
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
